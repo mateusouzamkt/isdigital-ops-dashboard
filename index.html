@@ -1,0 +1,277 @@
+av<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>isdigital ops — Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f0;color:#1a1a18;font-size:14px}
+.topbar{background:#fff;border-bottom:1px solid #e8e7e0;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.logo{font-size:16px;font-weight:600;color:#1a1a18}.logo span{color:#378ADD}
+.live{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:500;background:#e8f5e9;color:#2e7d32;padding:3px 10px;border-radius:99px}
+.dot{width:6px;height:6px;border-radius:50%;background:#2e7d32;animation:pulse 1.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.nav{display:flex;gap:4px}
+.nav-btn{padding:6px 14px;font-size:13px;border-radius:6px;border:none;cursor:pointer;background:transparent;color:#666;font-weight:500}
+.nav-btn.active{background:#1a1a18;color:#fff}
+.main{padding:20px 24px;max-width:1400px;margin:0 auto}
+.alert{background:#fff8e1;border:1px solid #ffecb3;border-radius:8px;padding:10px 14px;font-size:12px;color:#f57f17;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.section-title{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.07em;margin:20px 0 10px}
+.section-title:first-child{margin-top:0}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+@media(max-width:900px){.g4{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.g4,.g3,.g2{grid-template-columns:1fr}}
+.mc{background:#fff;border:1px solid #e8e7e0;border-radius:10px;padding:14px 16px}
+.ml{font-size:11px;color:#888;margin-bottom:4px}
+.mv{font-size:24px;font-weight:600;color:#1a1a18}
+.mv.g{color:#2e7d32}.mv.r{color:#c62828}.mv.a{color:#e65100}
+.ms{font-size:11px;color:#888;margin-top:3px}
+.trend-up{color:#2e7d32}.trend-dn{color:#c62828}
+.card{background:#fff;border:1px solid #e8e7e0;border-radius:12px;overflow:hidden;margin-bottom:12px}
+.card-hdr{padding:12px 16px;border-bottom:1px solid #f0efe8;display:flex;align-items:center;justify-content:space-between}
+.card-title{font-size:13px;font-weight:600;color:#1a1a18}
+.card-sub{font-size:11px;color:#888}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:11px;font-weight:600;color:#888;padding:9px 16px;border-bottom:1px solid #f0efe8;white-space:nowrap;background:#fafaf8}
+td{padding:11px 16px;border-bottom:1px solid #f5f5f0;color:#1a1a18;vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:#fafaf8}
+.pill{display:inline-block;font-size:10px;font-weight:600;padding:3px 8px;border-radius:99px}
+.p-g{background:#e8f5e9;color:#1b5e20}.p-r{background:#ffebee;color:#b71c1c}
+.p-a{background:#fff8e1;color:#e65100}.p-b{background:#e3f2fd;color:#1565c0}
+.p-gray{background:#f5f5f5;color:#666}
+.tk{font-size:10px;font-weight:600;padding:2px 6px;border-radius:4px;background:#e8f5e9;color:#1b5e20}
+.fb{font-size:10px;font-weight:600;padding:2px 6px;border-radius:4px;background:#e3f2fd;color:#1565c0}
+.tabs{display:flex;border-bottom:1px solid #f0efe8;background:#fafaf8}
+.tab{padding:10px 16px;font-size:13px;color:#888;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;font-weight:500}
+.tab.active{color:#1a1a18;border-bottom-color:#1a1a18}
+.tab-content{display:none}.tab-content.active{display:block}
+.bar-wrap{background:#f0efe8;border-radius:4px;height:6px;flex:1;overflow:hidden}
+.bar{height:6px;border-radius:4px}.bar.g{background:#43a047}.bar.b{background:#378ADD}.bar.r{background:#e53935}
+.vsl-row{padding:16px;border-bottom:1px solid #f5f5f0}
+.vsl-row:last-child{border-bottom:none}
+.vsl-metrics{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}
+@media(max-width:700px){.vsl-metrics{grid-template-columns:repeat(3,1fr)}}
+.vm{background:#fafaf8;border-radius:8px;padding:8px 10px;border:1px solid #f0efe8}
+.vm-l{font-size:10px;color:#888;margin-bottom:2px}
+.vm-v{font-size:14px;font-weight:600}
+.vm-v.g{color:#2e7d32}.vm-v.a{color:#e65100}.vm-v.r{color:#c62828}
+.insight{background:#e3f2fd;border:1px solid #bbdefb;border-radius:8px;padding:12px 14px;font-size:12px;color:#1565c0;line-height:1.6}
+.footer{padding:14px 24px;border-top:1px solid #e8e7e0;background:#fff;display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#888;margin-top:8px}
+.update-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;background:#f5f5f0;border:1px solid #e8e7e0;border-radius:99px;padding:3px 10px;color:#666}
+.page{display:none}.page.active{display:block}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="logo">is<span>digital</span> ops</div>
+  <div class="nav">
+    <button class="nav-btn active" onclick="showPage('overview')">Visão Geral</button>
+    <button class="nav-btn" onclick="showPage('traffic')">Tráfego</button>
+    <button class="nav-btn" onclick="showPage('vsl')">VSL</button>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <span class="update-badge">Atualizado: 21/03/2026</span>
+    <div class="live"><div class="dot"></div>ao vivo</div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- PÁGINA: VISÃO GERAL -->
+<div id="page-overview" class="page active">
+
+  <div class="alert">⚠️ ROAS hoje em 0.78× — abaixo do break-even. Conta Emily C4 bloqueada no FB. Novas contas sendo subidas para amanhã.</div>
+
+  <div class="section-title">financeiro — hoje</div>
+  <div class="g4">
+    <div class="mc"><div class="ml">Ad spend</div><div class="mv r">$2.144</div><div class="ms">Ontem: $5.514</div></div>
+    <div class="mc"><div class="ml">Receita</div><div class="mv g">$1.680</div><div class="ms">Ontem: $6.960</div></div>
+    <div class="mc"><div class="ml">Lucro / prejuízo</div><div class="mv r">-$464</div><div class="ms">ROI: -21.65%</div></div>
+    <div class="mc"><div class="ml">ROAS</div><div class="mv a">0.78×</div><div class="ms">CPA médio: $306</div></div>
+  </div>
+
+  <div class="section-title">mês atual</div>
+  <div class="g4">
+    <div class="mc"><div class="ml">Receita do mês</div><div class="mv g">$162.960</div><div class="ms"><span class="trend-up">+12.1%</span> vs mês passado</div></div>
+    <div class="mc"><div class="ml">Ad spend do mês</div><div class="mv">$155.396</div><div class="ms"><span class="trend-dn">+14.9%</span> vs mês passado</div></div>
+    <div class="mc"><div class="ml">ROAS do mês</div><div class="mv g">1.05×</div><div class="ms">Mês passado: 1.07×</div></div>
+    <div class="mc"><div class="ml">Cliques totais</div><div class="mv">13.766</div><div class="ms">CPC médio: $0.16</div></div>
+  </div>
+
+  <div class="section-title">clickbank — hoje (isdigtal)</div>
+  <div class="g3">
+    <div class="mc"><div class="ml">Vendas</div><div class="mv">10</div><div class="ms">sugarharm · burnslim</div></div>
+    <div class="mc"><div class="ml">Comissões</div><div class="mv g">$1.440</div><div class="ms">$240 por venda inicial</div></div>
+    <div class="mc"><div class="ml">Ticket médio</div><div class="mv">$329</div><div class="ms">Total bruto: $3.294</div></div>
+  </div>
+
+  <div class="section-title">ofertas ativas</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>Oferta</th><th>Canal</th><th>Receita hoje</th><th>Conversões</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><strong>SugarHarmony</strong></td><td><span class="tk">TK</span></td><td>$1.680</td><td>25</td><td><span class="pill p-g">Ativo</span></td></tr>
+        <tr><td>BurnSlim</td><td><span class="tk">TK</span></td><td>$0</td><td>0</td><td><span class="pill p-gray">Sem conv.</span></td></tr>
+        <tr><td>Sugar Control</td><td><span class="tk">TK</span></td><td>$0</td><td>0</td><td><span class="pill p-gray">Sem conv.</span></td></tr>
+        <tr><td>SugarHarmony</td><td><span class="fb">FB</span></td><td>—</td><td>—</td><td><span class="pill p-r">Bloqueada</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PÁGINA: TRÁFEGO -->
+<div id="page-traffic" class="page">
+
+  <div class="section-title">criativos — hoje</div>
+  <div class="card">
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab(this,'cr-tk')">TikTok Ads</div>
+      <div class="tab" onclick="switchTab(this,'cr-fb')">Facebook Ads</div>
+    </div>
+    <div id="cr-tk" class="tab-content active">
+      <table>
+        <thead><tr><th>Criativo</th><th>Receita</th><th>Conv.</th><th>Lucro</th><th>ROAS</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>D0018</strong></td><td>$960</td><td>13</td><td style="color:#2e7d32">+$534</td><td>1.24×</td><td><span class="pill p-g">Top 1</span></td></tr>
+          <tr><td><strong>SCK85</strong></td><td>$480</td><td>13</td><td style="color:#2e7d32">+$88</td><td>1.07×</td><td><span class="pill p-g">Top 2</span></td></tr>
+          <tr><td><strong>SCK83</strong></td><td>$240</td><td>3</td><td style="color:#c62828">-$59</td><td>0.80×</td><td><span class="pill p-a">Monitorar</span></td></tr>
+        </tbody>
+      </table>
+      <div style="padding:12px 16px">
+        <div style="font-size:11px;color:#888;margin-bottom:8px">participação na receita</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px"><span style="width:50px;color:#888">D0018</span><div class="bar-wrap"><div class="bar g" style="width:57%"></div></div><span style="min-width:36px;text-align:right;font-weight:600">57%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px"><span style="width:50px;color:#888">SCK85</span><div class="bar-wrap"><div class="bar b" style="width:29%"></div></div><span style="min-width:36px;text-align:right;font-weight:600">29%</span></div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:12px"><span style="width:50px;color:#888">SCK83</span><div class="bar-wrap"><div class="bar r" style="width:14%"></div></div><span style="min-width:36px;text-align:right;font-weight:600">14%</span></div>
+        </div>
+      </div>
+    </div>
+    <div id="cr-fb" class="tab-content">
+      <div style="padding:32px;text-align:center;color:#888;font-size:13px">
+        <div style="font-size:32px;margin-bottom:8px">🔒</div>
+        Conta Emily C4 bloqueada hoje.<br>Novas contas FB sendo subidas — dados disponíveis amanhã.
+      </div>
+    </div>
+  </div>
+
+  <div class="section-title">campanhas ativas — hoje</div>
+  <div class="card">
+    <table>
+      <thead><tr><th>Canal</th><th>Campanha</th><th>Receita</th><th>Conv.</th><th>CPA</th><th>Budget</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td><span class="tk">TK</span></td><td style="font-size:12px">TTK19 | DIABETES | SCK85 | CP0026</td><td>$480</td><td>5</td><td>$196</td><td>$600/d</td><td><span class="pill p-g">Top 1</span></td></tr>
+        <tr><td><span class="tk">TK</span></td><td style="font-size:12px">TTK131 | DIABETES | D0018 | CP0027</td><td>$240</td><td>2</td><td>$178</td><td>$300/d</td><td><span class="pill p-b">Ativo</span></td></tr>
+        <tr><td><span class="tk">TK</span></td><td style="font-size:12px">TTK131 | DIABETES | D0018 | CP0026</td><td>$240</td><td>3</td><td>$116</td><td>$300/d</td><td><span class="pill p-b">Ativo</span></td></tr>
+        <tr><td><span class="tk">TK</span></td><td style="font-size:12px">TTK131 | DIABETES | D0018 | CP0018</td><td>$240</td><td>1</td><td>$118</td><td>$100/d</td><td><span class="pill p-b">Ativo</span></td></tr>
+        <tr><td><span class="fb">FB</span></td><td style="font-size:12px">Emily C4 | DIABETES | SCK85</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="pill p-r">Bloqueada</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PÁGINA: VSL -->
+<div id="page-vsl" class="page">
+
+  <div class="section-title">retenção de vsl — top vídeos (últimos 30 dias)</div>
+  <div class="g3">
+    <div class="mc"><div class="ml">Total plays (30d)</div><div class="mv">92.099</div><div class="ms">Top 3 VSLs · Sugar Harmony</div></div>
+    <div class="mc"><div class="ml">Retenção média ao pitch</div><div class="mv a">8,27%</div><div class="ms">Média das 3 VSLs</div></div>
+    <div class="mc"><div class="ml">Audiência total do pitch</div><div class="mv">7.465</div><div class="ms">Pessoas que chegaram ao pitch</div></div>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <div class="card-hdr">
+      <div><div class="card-title">Análise de retenção por VSL</div><div class="card-sub">Sugar Harmony VSL10 · Pitch 55min52seg · Período: 05/03 – 21/03/2026</div></div>
+    </div>
+
+    <div class="vsl-row">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:3px">🟡 TTK14 | PARASITE | SUGAR HARMONY | VSL10</div>
+          <span class="tk">TikTok</span> <span style="font-size:11px;color:#888;margin-left:4px">43.794 plays · Top #1</span>
+        </div>
+        <span class="pill p-g">Melhor retenção</span>
+      </div>
+      <div class="vsl-metrics">
+        <div class="vm"><div class="vm-l">Visualizações</div><div class="vm-v">159.119</div></div>
+        <div class="vm"><div class="vm-l">Plays únicos</div><div class="vm-v">41.951</div></div>
+        <div class="vm"><div class="vm-l">Play rate</div><div class="vm-v a">28,04%</div></div>
+        <div class="vm"><div class="vm-l">Retenção ao pitch</div><div class="vm-v a">9,40%</div></div>
+        <div class="vm"><div class="vm-l">Engajamento</div><div class="vm-v g">17,74%</div></div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:#888;margin-bottom:5px">Retenção ao pitch · Audiência: 3.951 pessoas</div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="bar-wrap"><div class="bar g" style="width:9.4%"></div></div><span style="font-size:12px;font-weight:600">9,40%</span></div>
+    </div>
+
+    <div class="vsl-row">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:3px">🟡 TTK19 | PARASITE | SUGAR HARMONY | VSL10</div>
+          <span class="tk">TikTok</span> <span style="font-size:11px;color:#888;margin-left:4px">25.700 plays · Top #2</span>
+        </div>
+      </div>
+      <div class="vsl-metrics">
+        <div class="vm"><div class="vm-l">Visualizações</div><div class="vm-v">103.317</div></div>
+        <div class="vm"><div class="vm-l">Plays únicos</div><div class="vm-v">23.687</div></div>
+        <div class="vm"><div class="vm-l">Play rate</div><div class="vm-v a">35,49%</div></div>
+        <div class="vm"><div class="vm-l">Retenção ao pitch</div><div class="vm-v r">6,80%</div></div>
+        <div class="vm"><div class="vm-l">Engajamento</div><div class="vm-v a">13,10%</div></div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:#888;margin-bottom:5px">Retenção ao pitch · Audiência: 1.613 pessoas</div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="bar-wrap"><div class="bar r" style="width:6.8%"></div></div><span style="font-size:12px;font-weight:600">6,80%</span></div>
+    </div>
+
+    <div class="vsl-row">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:3px">🟡 TUDO | PARASITE | SUGAR HARMONY | VSL10</div>
+          <span class="fb">Facebook</span> <span style="font-size:11px;color:#888;margin-left:4px">22.605 plays · Top #3</span>
+        </div>
+        <span class="pill p-b">Play rate excepcional</span>
+      </div>
+      <div class="vsl-metrics">
+        <div class="vm"><div class="vm-l">Visualizações</div><div class="vm-v">25.504</div></div>
+        <div class="vm"><div class="vm-l">Plays únicos</div><div class="vm-v">22.090</div></div>
+        <div class="vm"><div class="vm-l">Play rate</div><div class="vm-v g">91,43%</div></div>
+        <div class="vm"><div class="vm-l">Retenção ao pitch</div><div class="vm-v a">8,60%</div></div>
+        <div class="vm"><div class="vm-l">Engajamento</div><div class="vm-v a">15,38%</div></div>
+      </div>
+      <div style="margin-top:10px;font-size:11px;color:#888;margin-bottom:5px">Retenção ao pitch · Audiência: 1.901 pessoas</div>
+      <div style="display:flex;align-items:center;gap:10px"><div class="bar-wrap"><div class="bar b" style="width:8.6%"></div></div><span style="font-size:12px;font-weight:600">8,60%</span></div>
+    </div>
+  </div>
+
+  <div class="insight">
+    💡 <strong>Análise:</strong> O vídeo Facebook (TUDO) tem play rate de 91,43% — muito superior ao TikTok (~28–35%). Tráfego FB chega mais qualificado à VSL. Retenção ao pitch similar nas 3 versões (~7–9%), sugerindo que o gargalo está na estrutura da VSL (meio do vídeo), não no criativo. Recomendação: testar novo gancho entre 15–25min para segurar quem está saindo.
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<div class="footer">
+  <div>isdigital ops · Última atualização: 21/03/2026 · RedTrack + ClickBank + Vturb</div>
+  <div class="live"><div class="dot"></div>dados ao vivo</div>
+</div>
+
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+function switchTab(el, id) {
+  var card = el.closest('.card');
+  card.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  card.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(id).classList.add('active');
+}
+</script>
+</body>
+</html>
