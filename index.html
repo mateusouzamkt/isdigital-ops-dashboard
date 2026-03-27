@@ -7,7 +7,7 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,sans-serif;background:#f5f5f0;color:#1a1a18;font-size:14px}
-.topbar{background:#fff;border-bottom:1px solid #e8e7e0;padding:0 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:50px;flex-wrap:wrap;gap:4px}
+.topbar{background:#fff;border-bottom:1px solid #e8e7e0;padding:0 16px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:50px;flex-wrap:wrap;gap:4px}
 .logo{font-size:15px;font-weight:700}.logo span{color:#378ADD}
 .nav{display:flex;gap:2px;flex-wrap:wrap}
 .nb{padding:5px 10px;font-size:11px;border-radius:6px;border:none;cursor:pointer;background:transparent;color:#666;font-weight:500}
@@ -17,9 +17,9 @@ body{font-family:-apple-system,sans-serif;background:#f5f5f0;color:#1a1a18;font-
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
 .main{padding:16px 20px;max-width:1440px;margin:0 auto}
 .page{display:none}.page.active{display:block}
-.aw{background:#fff8e1;border:1px solid #ffecb3;border-radius:8px;padding:10px 14px;font-size:12px;color:#e65100;margin-bottom:14px;line-height:1.5}
-.ai{background:#e3f2fd;border:1px solid #bbdefb;border-radius:8px;padding:10px 14px;font-size:12px;color:#1565c0;margin-bottom:14px;line-height:1.5}
-.ag{background:#e8f5e9;border:1px solid #c8e6c9;border-radius:8px;padding:10px 14px;font-size:12px;color:#1b5e20;margin-bottom:14px;line-height:1.5}
+.aw{background:#fff8e1;border:1px solid #ffecb3;border-radius:8px;padding:10px 14px;font-size:12px;color:#e65100;margin-bottom:14px}
+.ai{background:#e3f2fd;border:1px solid #bbdefb;border-radius:8px;padding:10px 14px;font-size:12px;color:#1565c0;margin-bottom:14px}
+.ag{background:#e8f5e9;border:1px solid #c8e6c9;border-radius:8px;padding:10px 14px;font-size:12px;color:#1b5e20;margin-bottom:14px}
 .sec{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.07em;margin:18px 0 10px}
 .sec:first-child{margin-top:0}
 .g4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
@@ -35,7 +35,7 @@ body{font-family:-apple-system,sans-serif;background:#f5f5f0;color:#1a1a18;font-
 .ms{font-size:11px;color:#888;margin-top:3px}
 .mv-meta{font-size:10px;color:#aaa;margin-top:2px}
 .card{background:#fff;border:1px solid #e8e7e0;border-radius:12px;overflow:hidden;margin-bottom:12px}
-.chdr{padding:11px 16px;border-bottom:1px solid #f0efe8;background:#fafaf8;display:flex;align-items:center;justify-content:space-between}
+.chdr{padding:11px 16px;border-bottom:1px solid #f0efe8;background:#fafaf8;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:6px}
 .ct{font-size:13px;font-weight:600}.cs{font-size:11px;color:#888}
 table{width:100%;border-collapse:collapse;font-size:12px}
 th{text-align:left;font-size:10px;font-weight:600;color:#888;padding:8px 12px;border-bottom:1px solid #f0efe8;background:#fafaf8;white-space:nowrap}
@@ -45,21 +45,17 @@ tr:hover td{background:#fafaf8}
 .pill{display:inline-block;font-size:10px;font-weight:600;padding:2px 7px;border-radius:99px}
 .pg{background:#e8f5e9;color:#1b5e20}.pr{background:#ffebee;color:#b71c1c}
 .pa{background:#fff8e1;color:#e65100}.pb{background:#e3f2fd;color:#1565c0}
-.pgr{background:#f5f5f5;color:#666}
+.pgr{background:#f5f5f5;color:#666}.pp{background:#f3e5f5;color:#6a1b9a}
 .tk{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;background:#e8f5e9;color:#1b5e20}
 .fb{font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;background:#e3f2fd;color:#1565c0}
 .bw{background:#f0efe8;border-radius:4px;height:6px;flex:1;overflow:hidden}
 .bar{height:6px;border-radius:4px}
 .bar.g{background:#43a047}.bar.b{background:#378ADD}.bar.r{background:#e53935}.bar.a{background:#fb8c00}
-.vmc{background:#fafaf8;border-radius:8px;padding:8px 10px;border:1px solid #f0efe8}
-.vml{font-size:10px;color:#888;margin-bottom:2px}
-.vmv{font-size:14px;font-weight:700}
-.vmv.g{color:#2e7d32}.vmv.a{color:#e65100}.vmv.r{color:#c62828}
 .insight{background:#e3f2fd;border:1px solid #bbdefb;border-radius:8px;padding:11px 14px;font-size:12px;color:#1565c0;line-height:1.6;margin:0 14px 14px}
 .funil{display:flex;flex-direction:column;gap:6px;padding:14px}
 .fs{display:flex;align-items:center;gap:10px}
 .fbw{flex:1;background:#f0efe8;border-radius:4px;height:30px;overflow:hidden}
-.fbf{height:100%;border-radius:4px;display:flex;align-items:center;padding:0 10px;font-size:11px;font-weight:600;color:#fff;min-width:70px}
+.fbf{height:100%;border-radius:4px;display:flex;align-items:center;padding:0 10px;font-size:11px;font-weight:600;color:#fff;min-width:60px}
 .fl{font-size:11px;color:#888;min-width:130px}
 .fv{font-size:12px;font-weight:700;min-width:50px;text-align:right}
 .dc{background:#fff;border:1px solid #e8e7e0;border-radius:12px;padding:14px;margin-bottom:10px}
@@ -70,24 +66,30 @@ tr:hover td{background:#fafaf8}
 .sr{background:#e53935}.sa{background:#fb8c00}.sg{background:#43a047}
 .pbar{background:#f0efe8;border-radius:8px;height:16px;overflow:hidden;margin:5px 0}
 .pfill{height:100%;border-radius:8px;background:#378ADD}
-.nc{background:#fff;border:1px solid #e8e7e0;border-radius:12px;overflow:hidden;margin-bottom:10px}
-.nhdr{padding:11px 14px;border-bottom:1px solid #f0efe8;display:flex;align-items:center;justify-content:space-between}
-.nbd{padding:12px 14px}
-.ns3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .ns{background:#fafaf8;border-radius:8px;padding:8px 10px;border:1px solid #f0efe8}
 .nsl{font-size:10px;color:#888;margin-bottom:2px}
 .nsv{font-size:14px;font-weight:700}
-.canal-hdr{padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0efe8;background:#fafaf8}
-.canal-badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px}
-.tk-badge{background:#e8f5e9;color:#1b5e20}
-.fb-badge{background:#e3f2fd;color:#1565c0}
+.ns3{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.canal-hdr{padding:10px 14px;display:flex;align-items:center;gap:10px;border-bottom:1px solid #f0efe8;background:#fafaf8;flex-wrap:wrap;gap:8px}
+.tk-badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;background:#e8f5e9;color:#1b5e20}
+.fb-badge{font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px;background:#e3f2fd;color:#1565c0}
+.oferta-badge{font-size:10px;font-weight:600;padding:2px 8px;border-radius:99px;background:#f3e5f5;color:#6a1b9a}
 .meta-row{display:flex;align-items:center;justify-content:space-between;padding:6px 0;border-bottom:0.5px solid #f0efe8;font-size:12px}
 .meta-row:last-child{border-bottom:none}
 .meta-label{color:#555;flex:1}
 .meta-val{font-weight:600;min-width:80px;text-align:right}
+.vsl-block{padding:14px 16px;border-bottom:1px solid #f5f5f0}
+.vsl-block:last-child{border-bottom:none}
+.vsl-title{font-size:12px;font-weight:600;margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vsl-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+@media(max-width:600px){.vsl-grid{grid-template-columns:repeat(3,1fr)}}
+.vsl-m{background:#fafaf8;border-radius:8px;padding:8px 10px;border:1px solid #f0efe8;text-align:center}
+.vsl-ml{font-size:10px;color:#888;margin-bottom:3px}
+.vsl-mv{font-size:15px;font-weight:700}
+.vsl-mv.g{color:#2e7d32}.vsl-mv.a{color:#e65100}.vsl-mv.r{color:#c62828}
+.ret-bar{margin-top:8px;background:#f0efe8;border-radius:4px;height:6px;overflow:hidden}
+.ret-fill{height:6px;border-radius:4px;background:#43a047}
 .footer{padding:10px 20px;border-top:1px solid #e8e7e0;background:#fff;display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#888;margin-top:10px}
-.ng2{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(max-width:800px){.ng2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -111,40 +113,40 @@ tr:hover td{background:#fafaf8}
 
 <!-- P1 VISAO GERAL -->
 <div id="p1" class="page active">
-  <div class="aw">ROAS hoje 0.70x — abaixo do break-even. Spend $1.027 | Receita $720 | Prejuizo -$307. Mes acumulado positivo: ROAS 1.02x, lucro +$3.939.</div>
+  <div class="aw">ROAS hoje 0.68x — abaixo do break-even. Spend $1.050 | Receita $720 | 3 vendas. Mes acumulado positivo: ROAS 1.02x.</div>
   <div class="sec">financeiro hoje — 26/03/2026</div>
   <div class="g4">
-    <div class="mc"><div class="ml">Ad Spend</div><div class="mv r">$1.027</div><div class="ms">Ontem: $1.770 (-42%)</div><div class="mv-meta">Meta/dia: $2.333</div></div>
+    <div class="mc"><div class="ml">Ad Spend</div><div class="mv r">$1.050</div><div class="ms">Ontem: $1.770 (-41%)</div><div class="mv-meta">Meta/dia: $2.333</div></div>
     <div class="mc"><div class="ml">Receita</div><div class="mv g">$720</div><div class="ms">Ontem: $480 (+50%)</div><div class="mv-meta">Meta/dia: $3.333</div></div>
-    <div class="mc"><div class="ml">Lucro/Prejuizo</div><div class="mv r">-$307</div><div class="ms">ROI: -29.89%</div><div class="mv-meta">Meta margem: 30%</div></div>
-    <div class="mc"><div class="ml">ROAS</div><div class="mv r">0.70x</div><div class="ms">Break-even: 1.00x</div><div class="mv-meta">Meta: 1.43x</div></div>
+    <div class="mc"><div class="ml">Lucro/Prejuizo</div><div class="mv r">-$330</div><div class="ms">ROI: -31.43%</div><div class="mv-meta">Meta margem: 30%</div></div>
+    <div class="mc"><div class="ml">ROAS</div><div class="mv r">0.68x</div><div class="ms">Break-even: 1.00x</div><div class="mv-meta">Meta: 1.43x</div></div>
   </div>
 
   <div class="sec">por canal — hoje</div>
-  <div class="ng2">
+  <div class="g2">
     <div class="card">
-      <div class="canal-hdr"><span class="canal-badge tk-badge">TikTok Ads</span><span class="pill pg">Operacional</span></div>
+      <div class="canal-hdr"><span class="tk-badge">TikTok Ads</span><span class="pill pg">Operacional</span></div>
       <div style="padding:12px 14px">
         <div class="ns3">
-          <div class="ns"><div class="nsl">Connect Rate VSL</div><div class="nsv g">81.81%</div></div>
-          <div class="ns"><div class="nsl">LP Views</div><div class="nsv">4.067</div></div>
-          <div class="ns"><div class="nsl">IC Checkouts</div><div class="nsv r">18</div></div>
-          <div class="ns"><div class="nsl">Custo por IC</div><div class="nsv">$57</div></div>
-          <div class="ns"><div class="nsl">Conv. Checkout</div><div class="nsv g">22.22%</div></div>
-          <div class="ns"><div class="nsl">Compras</div><div class="nsv r">4</div></div>
+          <div class="ns"><div class="nsl">Spend</div><div class="nsv r">~$725</div></div>
+          <div class="ns"><div class="nsl">Receita</div><div class="nsv g">$480</div></div>
+          <div class="ns"><div class="nsl">Vendas</div><div class="nsv">2</div></div>
+          <div class="ns"><div class="nsl">ROAS</div><div class="nsv a">0.66x</div></div>
+          <div class="ns"><div class="nsl">VSLs ativas</div><div class="nsv">2</div></div>
+          <div class="ns"><div class="nsl">Em teste</div><div class="nsv b">JointPain</div></div>
         </div>
       </div>
     </div>
     <div class="card">
-      <div class="canal-hdr"><span class="canal-badge fb-badge">Facebook Ads</span><span class="pill pb">Limitado</span></div>
+      <div class="canal-hdr"><span class="fb-badge">Facebook Ads</span><span class="pill pb">1 campanha</span></div>
       <div style="padding:12px 14px">
         <div class="ns3">
+          <div class="ns"><div class="nsl">Spend</div><div class="nsv r">~$325</div></div>
           <div class="ns"><div class="nsl">Receita</div><div class="nsv g">$240</div></div>
-          <div class="ns"><div class="nsl">Compras</div><div class="nsv">1</div></div>
-          <div class="ns"><div class="nsl">Spend</div><div class="nsv r">$325</div></div>
+          <div class="ns"><div class="nsl">Vendas</div><div class="nsv">1</div></div>
           <div class="ns"><div class="nsl">ROAS</div><div class="nsv r">0.74x</div></div>
-          <div class="ns"><div class="nsl">CPA</div><div class="nsv r">$325</div></div>
-          <div class="ns"><div class="nsl">Connect VSL</div><div class="nsv a">75.64%</div></div>
+          <div class="ns"><div class="nsl">Campanha</div><div class="nsv" style="font-size:10px">Emily C3</div></div>
+          <div class="ns"><div class="nsl">JointPain FB</div><div class="nsv a" style="font-size:10px">Amanha</div></div>
         </div>
       </div>
     </div>
@@ -152,25 +154,24 @@ tr:hover td{background:#fafaf8}
 
   <div class="sec">metricas do funil — hoje vs meta</div>
   <div class="g6">
-    <div class="mc"><div class="ml">CPA Real</div><div class="mv r">$257</div><div class="mv-meta">Meta: $168</div></div>
+    <div class="mc"><div class="ml">CPA Real</div><div class="mv r">$350</div><div class="mv-meta">Meta: $168</div></div>
     <div class="mc"><div class="ml">IC Checkouts</div><div class="mv r">18</div><div class="mv-meta">Meta/dia: 63</div></div>
-    <div class="mc"><div class="ml">Conv. Checkout</div><div class="mv g">22.22%</div><div class="mv-meta">Meta: 22% ✓</div></div>
-    <div class="mc"><div class="ml">Connect VSL (TK)</div><div class="mv g">81.81%</div><div class="mv-meta">Meta: 33-90% ✓</div></div>
-    <div class="mc"><div class="ml">LP Views</div><div class="mv g">4.067</div><div class="mv-meta">Meta/dia: 2.313 ✓</div></div>
-    <div class="mc"><div class="ml">Compras</div><div class="mv r">4</div><div class="mv-meta">Meta/dia: 14</div></div>
+    <div class="mc"><div class="ml">Conv. Checkout</div><div class="mv g">22.22%</div><div class="mv-meta">Meta: 22% OK</div></div>
+    <div class="mc"><div class="ml">Vendas hoje</div><div class="mv r">3</div><div class="mv-meta">Meta/dia: 14</div></div>
+    <div class="mc"><div class="ml">LP Views</div><div class="mv g">4.067</div><div class="mv-meta">Meta: 2.313 OK</div></div>
+    <div class="mc"><div class="ml">Mes ROAS</div><div class="mv a">1.02x</div><div class="mv-meta">Meta: 1.43x</div></div>
   </div>
 
   <div class="sec">comparativo hoje vs ontem vs mes</div>
   <div class="card"><table>
     <thead><tr><th>Metrica</th><th>Hoje</th><th>Ontem</th><th>Var.</th><th>Mes atual</th><th>Mes passado</th><th>Meta/mes</th></tr></thead>
     <tbody>
-      <tr><td>Ad Spend</td><td>$1.027</td><td>$1.770</td><td><span class="pill pg">-42%</span></td><td>$167.181</td><td>$135.263</td><td>$70.000</td></tr>
-      <tr><td>Receita</td><td>$720</td><td>$480</td><td><span class="pill pg">+50%</span></td><td>$171.120</td><td>$145.329</td><td>$100.000</td></tr>
-      <tr><td>Lucro</td><td style="color:#c62828">-$307</td><td style="color:#c62828">-$1.290</td><td><span class="pill pg">Melhorou</span></td><td style="color:#2e7d32">+$3.939</td><td style="color:#2e7d32">+$10.066</td><td style="color:#2e7d32">$30.000</td></tr>
-      <tr><td>ROAS</td><td>0.70x</td><td>0.27x</td><td><span class="pill pg">+159%</span></td><td>1.02x</td><td>1.07x</td><td>1.43x</td></tr>
-      <tr><td>Compras</td><td>4</td><td>2</td><td><span class="pill pg">+100%</span></td><td>—</td><td>—</td><td>417/mes</td></tr>
-      <tr><td>CPA medio</td><td>$257</td><td>—</td><td>—</td><td>—</td><td>—</td><td>$168</td></tr>
-      <tr><td>IC Checkouts</td><td>18</td><td>—</td><td>—</td><td>—</td><td>—</td><td>63/dia</td></tr>
+      <tr><td>Ad Spend</td><td>$1.050</td><td>$1.770</td><td><span class="pill pg">-41%</span></td><td>$167.219</td><td>$135.263</td><td>$70.000</td></tr>
+      <tr><td>Receita</td><td>$720</td><td>$480</td><td><span class="pill pg">+50%</span></td><td>$171.360</td><td>$145.329</td><td>$100.000</td></tr>
+      <tr><td>Lucro</td><td style="color:#c62828">-$330</td><td style="color:#c62828">-$1.290</td><td><span class="pill pg">melhorou</span></td><td style="color:#2e7d32">+$4.141</td><td style="color:#2e7d32">+$10.066</td><td style="color:#2e7d32">$30.000</td></tr>
+      <tr><td>ROAS</td><td>0.68x</td><td>0.27x</td><td><span class="pill pg">+152%</span></td><td>1.02x</td><td>1.07x</td><td>1.43x</td></tr>
+      <tr><td>Vendas</td><td>3</td><td>2</td><td><span class="pill pg">+50%</span></td><td>—</td><td>—</td><td>417/mes</td></tr>
+      <tr><td>CPA medio</td><td>$350</td><td>—</td><td>—</td><td>—</td><td>—</td><td>$168</td></tr>
     </tbody>
   </table></div>
 </div>
@@ -178,111 +179,239 @@ tr:hover td{background:#fafaf8}
 <!-- P2 POR NICHO -->
 <div id="p2" class="page">
   <div class="sec">nichos ativos — 26/03/2026</div>
-  <div class="nc">
-    <div class="nhdr"><div><div style="font-size:13px;font-weight:700">SugarHarmony</div><div style="font-size:11px;color:#888">Diabetes · ClickBank</div></div><span class="pill pg">Top produto</span></div>
-    <div class="nbd">
+  <div class="card">
+    <div class="chdr"><div class="ct">SugarHarmony</div><div style="display:flex;gap:6px;align-items:center"><span class="tk-badge">TikTok</span><span class="fb-badge">Facebook</span><span class="pill pg">Top produto</span></div></div>
+    <div style="padding:12px 14px">
       <div class="ns3">
         <div class="ns"><div class="nsl">Receita hoje</div><div class="nsv g">$720</div></div>
-        <div class="ns"><div class="nsl">Compras</div><div class="nsv">4</div></div>
+        <div class="ns"><div class="nsl">Vendas</div><div class="nsv">3</div></div>
         <div class="ns"><div class="nsl">Comissao</div><div class="nsv">$240</div></div>
-        <div class="ns"><div class="nsl">Canais</div><div class="nsv" style="font-size:11px">TK + FB</div></div>
-        <div class="ns"><div class="nsl">Connect VSL</div><div class="nsv g" style="font-size:12px">81.81%</div></div>
-        <div class="ns"><div class="nsl">Status</div><div class="nsv g" style="font-size:11px">Ativo</div></div>
+        <div class="ns"><div class="nsl">VSL TK ret.</div><div class="nsv a">9.39%</div></div>
+        <div class="ns"><div class="nsl">VSL FB ret.</div><div class="nsv g">12.36%</div></div>
+        <div class="ns"><div class="nsl">Status</div><div class="nsv g" style="font-size:11px">Principal</div></div>
       </div>
-      <div style="margin-top:10px;display:flex;align-items:center;gap:8px"><span style="font-size:11px;color:#888">100% da receita hoje</span><div class="bw"><div class="bar g" style="width:100%"></div></div><span style="font-weight:700">100%</span></div>
     </div>
   </div>
-  <div class="nc">
-    <div class="nhdr"><div><div style="font-size:13px;font-weight:700">CoreStrength</div><div style="font-size:11px;color:#888">Emagrecimento · Neuropatia · TTK19</div></div><span class="pill pr">Pausar</span></div>
-    <div class="nbd">
+  <div class="card">
+    <div class="chdr"><div class="ct">JointPain / CoreStrength</div><div style="display:flex;gap:6px;align-items:center"><span class="tk-badge">TikTok</span><span style="font-size:10px;color:#888">FB amanha</span><span class="pill pp">Em teste</span></div></div>
+    <div style="padding:12px 14px">
       <div class="ns3">
         <div class="ns"><div class="nsl">Receita</div><div class="nsv r">$0</div></div>
-        <div class="ns"><div class="nsl">Spend</div><div class="nsv r">$113</div></div>
-        <div class="ns"><div class="nsl">Cliques</div><div class="nsv">359</div></div>
-        <div class="ns"><div class="nsl">LP Views</div><div class="nsv">2.480</div></div>
-        <div class="ns"><div class="nsl">IC</div><div class="nsv">0</div></div>
-        <div class="ns"><div class="nsl">Status</div><div class="nsv r" style="font-size:11px">Pausar hoje</div></div>
+        <div class="ns"><div class="nsl">Spend TK</div><div class="nsv r">$113</div></div>
+        <div class="ns"><div class="nsl">VSL testada</div><div class="nsv b" style="font-size:11px">HONEY V3</div></div>
+        <div class="ns"><div class="nsl">Ret. VSL TK</div><div class="nsv a">8.89%</div></div>
+        <div class="ns"><div class="nsl">Pitch</div><div class="nsv" style="font-size:11px">33min05s</div></div>
+        <div class="ns"><div class="nsl">FB amanha</div><div class="nsv a" style="font-size:11px">Preparado</div></div>
       </div>
     </div>
   </div>
-  <div class="nc">
-    <div class="nhdr"><div><div style="font-size:13px;font-weight:700">GlucoSteady</div><div style="font-size:11px;color:#888">Diabetes · Cartpanda</div></div><span class="pill pb">Em teste</span></div>
-    <div class="nbd"><div style="font-size:12px;color:#888">Sem spend ativo hoje. Em validacao.</div></div>
+  <div class="card" style="border:1px dashed #e8e7e0;background:#fafaf8">
+    <div class="chdr" style="background:transparent"><div class="ct" style="color:#888">GlucoSteady</div><span class="pill pgr">Pausado</span></div>
+    <div style="padding:12px 14px;font-size:12px;color:#888">Sem trafego ativo hoje. Em validacao.</div>
   </div>
 </div>
 
 <!-- P3 CRIATIVOS -->
 <div id="p3" class="page">
-  <div class="sec">tiktok ads — criativos hoje</div>
+  <div class="sec">tiktok — campanhas ativas hoje</div>
   <div class="card">
-    <div class="canal-hdr"><span class="canal-badge tk-badge">TikTok Ads</span><span style="font-size:11px;color:#888">26/03/2026</span></div>
+    <div class="canal-hdr"><span class="tk-badge">TikTok Ads</span><span class="oferta-badge">SugarHarmony</span><span style="font-size:11px;color:#888">26/03/2026</span></div>
     <table>
-      <thead><tr><th>Criativo</th><th>Spend</th><th>Receita</th><th>Conv.</th><th>CPA</th><th>ROAS</th><th>Connect VSL</th><th>Status</th></tr></thead>
+      <thead><tr><th>Campanha</th><th>Spend</th><th>Receita</th><th>Vendas</th><th>CPA</th><th>ROAS</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td><b>D0018</b> (TTK131/CP0040)</td><td>$93</td><td>$240</td><td>1</td><td style="color:#2e7d32">$93</td><td style="color:#2e7d32">2.58x</td><td>141.46%</td><td><span class="pill pg">Escalar</span></td></tr>
-        <tr><td><b>D024</b> (TTK18)</td><td>$252</td><td>$240</td><td>1</td><td style="color:#e65100">$252</td><td>0.95x</td><td>76.99%</td><td><span class="pill pa">Monitorar</span></td></tr>
-        <tr><td><b>SCK83</b></td><td>—</td><td>$240</td><td>43 (hist.)</td><td>—</td><td>—</td><td>—</td><td><span class="pill pb">Ativo</span></td></tr>
-        <tr><td><b>TTK19/CoreStrength</b></td><td>$113</td><td>$0</td><td>0</td><td>—</td><td>0x</td><td>69.08%</td><td><span class="pill pr">Pausar</span></td></tr>
-        <tr><td><b>TTK58</b> / SH</td><td>$49</td><td>$0</td><td>0</td><td>—</td><td>0x</td><td>52.51%</td><td><span class="pill pr">Pausar</span></td></tr>
-        <tr><td><b>TTK61</b> / SH</td><td>$56</td><td>$0</td><td>0</td><td>—</td><td>0x</td><td>81.09%</td><td><span class="pill pr">Pausar</span></td></tr>
+        <tr><td style="font-size:11px"><b>TTK131</b> | D0018 | CP0040</td><td>$93</td><td>$240</td><td>1</td><td style="color:#2e7d32">$93</td><td style="color:#2e7d32">2.58x</td><td><span class="pill pg">Escalar</span></td></tr>
+        <tr><td style="font-size:11px"><b>TTK18</b> | D024</td><td>$252</td><td>$240</td><td>1</td><td style="color:#e65100">$252</td><td>0.95x</td><td><span class="pill pa">Monitorar</span></td></tr>
+        <tr><td style="font-size:11px"><b>TTK58</b> | Parasite | SH</td><td>$49</td><td>$0</td><td>0</td><td>—</td><td>0x</td><td><span class="pill pr">Pausar</span></td></tr>
+        <tr><td style="font-size:11px"><b>TTK61</b> | Abacate | SH</td><td>$56</td><td>$0</td><td>0</td><td>—</td><td>0x</td><td><span class="pill pr">Pausar</span></td></tr>
       </tbody>
     </table>
-    <div style="padding:12px 14px;border-top:1px solid #f0efe8">
-      <div style="font-size:11px;color:#888;margin-bottom:8px;font-weight:600;text-transform:uppercase">Receita por criativo — TikTok hoje</div>
-      <div style="display:flex;flex-direction:column;gap:7px">
-        <div style="display:flex;align-items:center;gap:10px;font-size:12px"><span style="width:120px">D0018 / ROAS 2.58x</span><div class="bw"><div class="bar g" style="width:33%"></div></div><span style="font-weight:700;min-width:60px;text-align:right">$240</span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:12px"><span style="width:120px">D024 / ROAS 0.95x</span><div class="bw"><div class="bar a" style="width:33%"></div></div><span style="font-weight:700;min-width:60px;text-align:right">$240</span></div>
-        <div style="display:flex;align-items:center;gap:10px;font-size:12px"><span style="width:120px">SCK83</span><div class="bw"><div class="bar b" style="width:33%"></div></div><span style="font-weight:700;min-width:60px;text-align:right">$240</span></div>
-      </div>
-    </div>
   </div>
 
-  <div class="sec">facebook ads — hoje</div>
   <div class="card">
-    <div class="canal-hdr"><span class="canal-badge fb-badge">Facebook Ads</span><span style="font-size:11px;color:#888">1 campanha ativa</span></div>
+    <div class="canal-hdr"><span class="tk-badge">TikTok Ads</span><span class="oferta-badge">JointPain / CoreStrength</span><span class="pill pp">Em teste</span></div>
     <table>
-      <thead><tr><th>Campanha</th><th>Spend</th><th>Receita</th><th>Conv.</th><th>CPA</th><th>ROAS</th><th>Connect VSL</th><th>Status</th></tr></thead>
+      <thead><tr><th>Campanha</th><th>Spend</th><th>Receita</th><th>Vendas</th><th>CPA</th><th>ROAS</th><th>Status</th></tr></thead>
       <tbody>
-        <tr><td style="font-size:11px">Emily Lily C3 | SugarHarmony | Parasite</td><td>$325</td><td>$240</td><td>1</td><td style="color:#c62828">$325</td><td>0.74x</td><td>75.64%</td><td><span class="pill pr">CPA alto</span></td></tr>
-        <tr><td style="font-size:11px">Laura Moreira | SugarHarmony</td><td>$46</td><td>$0</td><td>0</td><td>—</td><td>0x</td><td>80%</td><td><span class="pill pr">Sem conv.</span></td></tr>
+        <tr><td style="font-size:11px"><b>TTK19</b> | Neuropatia | CS</td><td>$113</td><td>$0</td><td>0</td><td>—</td><td>0x</td><td><span class="pill pr">Pausar</span></td></tr>
       </tbody>
     </table>
   </div>
+
+  <div class="sec">facebook — campanhas ativas hoje</div>
+  <div class="card">
+    <div class="canal-hdr"><span class="fb-badge">Facebook Ads</span><span class="oferta-badge">SugarHarmony</span><span style="font-size:11px;color:#888">26/03/2026</span></div>
+    <table>
+      <thead><tr><th>Campanha</th><th>Spend</th><th>Receita</th><th>Vendas</th><th>CPA</th><th>ROAS</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td style="font-size:11px"><b>Emily Lily C3</b> | Parasite | SH | SCK85</td><td>$325</td><td>$240</td><td>1</td><td style="color:#c62828">$325</td><td>0.74x</td><td><span class="pill pa">Monitorar</span></td></tr>
+        <tr><td style="font-size:11px"><b>Laura Moreira</b> | SH</td><td>$46</td><td>$0</td><td>0</td><td>—</td><td>0x</td><td><span class="pill pr">Pausar</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="border:1px dashed #e8e7e0;background:#fafaf8">
+    <div class="canal-hdr" style="background:transparent"><span class="fb-badge">Facebook Ads</span><span class="oferta-badge">JointPain / CoreStrength</span><span class="pill pa">Amanha</span></div>
+    <div style="padding:14px;font-size:12px;color:#888">Campanha preparada para subir amanha. VSL HONEY V3 com pitch em 33min05s. Monitorar retencao e IC nos primeiros 3 dias.</div>
+  </div>
+
+  <div class="sec">top criativos — historico</div>
+  <div class="card"><table>
+    <thead><tr><th>#</th><th>Canal</th><th>Oferta</th><th>Criativo</th><th>Conv. historico</th><th>ROAS melhor dia</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td style="color:#2e7d32;font-weight:700">1</td><td><span class="tk">TK</span></td><td><span class="oferta-badge">SugarHarmony</span></td><td><b>D024</b></td><td>254</td><td>—</td><td><span class="pill pg">Top historico</span></td></tr>
+      <tr><td style="color:#2e7d32;font-weight:700">2</td><td><span class="tk">TK</span></td><td><span class="oferta-badge">SugarHarmony</span></td><td><b>D0018</b></td><td>—</td><td>2.58x</td><td><span class="pill pg">Escalar agora</span></td></tr>
+      <tr><td style="color:#1565c0;font-weight:700">3</td><td><span class="tk">TK</span></td><td><span class="oferta-badge">SugarHarmony</span></td><td><b>SCK83</b></td><td>43</td><td>—</td><td><span class="pill pb">Monitorar</span></td></tr>
+      <tr><td style="color:#1565c0;font-weight:700">4</td><td><span class="fb">FB</span></td><td><span class="oferta-badge">SugarHarmony</span></td><td><b>SCK85</b></td><td>—</td><td>1.78x</td><td><span class="pill pb">Emily C3</span></td></tr>
+    </tbody>
+  </table></div>
 </div>
 
 <!-- P4 VSL E FUNIL -->
 <div id="p4" class="page">
-  <div class="sec">funil completo — TikTok hoje</div>
+  <div class="sec">funil de hoje — tiktok (sugarharmony)</div>
   <div class="card">
-    <div class="chdr"><div class="ct">Cliques para Compra — 26/03/2026</div><div class="cs">SugarHarmony · TikTok</div></div>
+    <div class="chdr"><div class="ct">Cliques para Compra</div><div style="display:flex;gap:6px"><span class="tk-badge">TikTok</span><span class="oferta-badge">SugarHarmony</span><span class="cs">26/03/2026</span></div></div>
     <div class="funil">
       <div class="fs"><div class="fl">Cliques nos Ads</div><div class="fbw"><div class="fbf" style="width:100%;background:#378ADD">4.971 cliques</div></div><div class="fv">4.971</div></div>
       <div class="fs"><div class="fl">LP Views</div><div class="fbw"><div class="fbf" style="width:82%;background:#5c9ee8">4.067 views</div></div><div class="fv">81.8%</div></div>
-      <div class="fs"><div class="fl">Plays VSL (Connect)</div><div class="fbw"><div class="fbf" style="width:67%;background:#43a047">3.328 plays</div></div><div class="fv g">81.81%</div></div>
-      <div class="fs"><div class="fl">IC (Checkout)</div><div class="fbw"><div class="fbf" style="width:5%;background:#fb8c00;min-width:80px">18 checkouts</div></div><div class="fv a">0.44%</div></div>
-      <div class="fs"><div class="fl">Compras</div><div class="fbw"><div class="fbf" style="width:2%;background:#7b1fa2;min-width:60px">4 compras</div></div><div class="fv" style="color:#7b1fa2">22.22%</div></div>
+      <div class="fs"><div class="fl">Plays VSL</div><div class="fbw"><div class="fbf" style="width:67%;background:#43a047">3.328 plays</div></div><div class="fv g">81.81%</div></div>
+      <div class="fs"><div class="fl">IC (Checkout)</div><div class="fbw"><div class="fbf" style="width:5%;background:#fb8c00;min-width:60px">18 IC</div></div><div class="fv a">0.54%</div></div>
+      <div class="fs"><div class="fl">Vendas</div><div class="fbw"><div class="fbf" style="width:2%;background:#7b1fa2;min-width:55px">3 vendas</div></div><div class="fv" style="color:#7b1fa2">22.22%</div></div>
     </div>
-    <div class="insight">Connect VSL excelente: 81.81%. Gargalo critico: de 4.067 LP Views apenas 18 chegaram ao checkout (0.44%). Conv. Checkout 22.22% esta na meta. Problema esta na retencao da VSL ate o pitch.</div>
+    <div class="insight">Volume de trafego acima da meta (4.067 LP Views vs meta 2.313). Gargalo critico: de 3.328 plays apenas 18 chegaram ao checkout (0.54%). Conv. Checkout 22.22% na meta. Problema e retencao da VSL ate o pitch.</div>
   </div>
 
+  <div class="sec">vsl por oferta e plataforma — metricas historicas (vturb)</div>
+
+  <!-- SUGARHARMONY TIKTOK -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="chdr">
+      <div class="ct">SugarHarmony — VSL10</div>
+      <div style="display:flex;gap:6px;align-items:center"><span class="tk-badge">TikTok</span><span class="oferta-badge">Diabetes</span><span class="cs">Pitch: 55min52s</span></div>
+    </div>
+
+    <div class="vsl-block">
+      <div class="vsl-title">
+        <span>TTK14 | PARASITE</span>
+        <span class="pill pg">Principal</span>
+        <span style="font-size:11px;color:#888">43.807 plays</span>
+      </div>
+      <div class="vsl-grid">
+        <div class="vsl-m"><div class="vsl-ml">Visualizacoes</div><div class="vsl-mv">159.407</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Play Rate</div><div class="vsl-mv a">28%</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Ret. ao Pitch</div><div class="vsl-mv g">9.39%</div><div class="ret-bar"><div class="ret-fill" style="width:134%"></div></div></div>
+        <div class="vsl-m"><div class="vsl-ml">Aud. Pitch</div><div class="vsl-mv">3.951</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Engajamento</div><div class="vsl-mv g">17.73%</div></div>
+      </div>
+    </div>
+
+    <div class="vsl-block">
+      <div class="vsl-title">
+        <span>TUDO | PARASITE</span>
+        <span class="pill pb">Ativo</span>
+        <span style="font-size:11px;color:#888">30.486 plays</span>
+      </div>
+      <div class="vsl-grid">
+        <div class="vsl-m"><div class="vsl-ml">Visualizacoes</div><div class="vsl-mv">121.312</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Play Rate</div><div class="vsl-mv g">35.55%</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Ret. ao Pitch</div><div class="vsl-mv a">6.91%</div><div class="ret-bar"><div class="ret-fill" style="width:99%;background:#fb8c00"></div></div></div>
+        <div class="vsl-m"><div class="vsl-ml">Aud. Pitch</div><div class="vsl-mv">1.922</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Engajamento</div><div class="vsl-mv a">13.18%</div></div>
+      </div>
+    </div>
+
+    <div class="insight">Meta retencao: 7%. TTK14 esta em 9.39% (acima). TUDO em 6.91% (abaixo da meta — monitorar). Gargalo principal: minutos 15-25 da VSL onde ha maior queda de retencao.</div>
+  </div>
+
+  <!-- SUGARHARMONY FACEBOOK -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="chdr">
+      <div class="ct">SugarHarmony — VSL10</div>
+      <div style="display:flex;gap:6px;align-items:center"><span class="fb-badge">Facebook</span><span class="oferta-badge">Diabetes</span><span class="cs">Pitch: 55min52s</span></div>
+    </div>
+
+    <div class="vsl-block">
+      <div class="vsl-title">
+        <span>AGENCIA MONKEY | PARASITE</span>
+        <span class="pill pg">Melhor retencao</span>
+        <span style="font-size:11px;color:#888">1.564 plays</span>
+      </div>
+      <div class="vsl-grid">
+        <div class="vsl-m"><div class="vsl-ml">Visualizacoes</div><div class="vsl-mv">1.767</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Play Rate</div><div class="vsl-mv g">91.59%</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Ret. ao Pitch</div><div class="vsl-mv g">12.36%</div><div class="ret-bar"><div class="ret-fill" style="width:100%"></div></div></div>
+        <div class="vsl-m"><div class="vsl-ml">Aud. Pitch</div><div class="vsl-mv">186</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Engajamento</div><div class="vsl-mv g">21.08%</div></div>
+      </div>
+    </div>
+
+    <div class="insight">Play Rate FB 91.59% vs TikTok 28-35% — publico FB ja vai com intencao de assistir. Retencao ao pitch 12.36% — melhor que TikTok. Com conta FB estavel, este e o canal mais eficiente para a VSL.</div>
+  </div>
+
+  <!-- JOINTPAIN TIKTOK -->
+  <div class="card" style="margin-bottom:12px">
+    <div class="chdr">
+      <div class="ct">JointPain / CoreStrength — HONEY V3 OTM</div>
+      <div style="display:flex;gap:6px;align-items:center"><span class="tk-badge">TikTok</span><span class="oferta-badge">Dores / Emagrecimento</span><span class="cs">Pitch: 33min05s</span><span class="pill pp">Em teste</span></div>
+    </div>
+
+    <div class="vsl-block">
+      <div class="vsl-title">
+        <span>TTK19 | HONEY</span>
+        <span class="pill pg">Ret. promissora</span>
+        <span style="font-size:11px;color:#888">185 plays</span>
+      </div>
+      <div class="vsl-grid">
+        <div class="vsl-m"><div class="vsl-ml">Visualizacoes</div><div class="vsl-mv">564</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Play Rate</div><div class="vsl-mv g">33.40%</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Ret. ao Pitch</div><div class="vsl-mv g">8.89%</div><div class="ret-bar"><div class="ret-fill" style="width:100%"></div></div></div>
+        <div class="vsl-m"><div class="vsl-ml">Aud. Pitch</div><div class="vsl-mv">16</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Engajamento</div><div class="vsl-mv g">24%</div></div>
+      </div>
+    </div>
+
+    <div class="vsl-block">
+      <div class="vsl-title">
+        <span>TTK60 | HONEY</span>
+        <span class="pill pr">Ret. baixa</span>
+        <span style="font-size:11px;color:#888">68 plays</span>
+      </div>
+      <div class="vsl-grid">
+        <div class="vsl-m"><div class="vsl-ml">Visualizacoes</div><div class="vsl-mv">469</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Play Rate</div><div class="vsl-mv r">18.90%</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Ret. ao Pitch</div><div class="vsl-mv r">1.59%</div><div class="ret-bar"><div class="ret-fill" style="width:23%;background:#e53935"></div></div></div>
+        <div class="vsl-m"><div class="vsl-ml">Aud. Pitch</div><div class="vsl-mv">1</div></div>
+        <div class="vsl-m"><div class="vsl-ml">Engajamento</div><div class="vsl-mv a">16.89%</div></div>
+      </div>
+    </div>
+
+    <div class="insight">TTK19 com 8.89% de retencao ao pitch — acima da meta de 7%. Volume ainda pequeno (185 plays) para decisao definitiva. TTK60 com 1.59% — muito abaixo, pausar e concentrar no TTK19. FB entra amanha — comparar retencao entre os dois canais.</div>
+  </div>
+
+  <!-- JOINTPAIN FACEBOOK -->
+  <div class="card" style="border:1px dashed #e8e7e0;background:#fafaf8;margin-bottom:12px">
+    <div class="chdr" style="background:transparent">
+      <div class="ct" style="color:#888">JointPain / CoreStrength — HONEY V3 OTM</div>
+      <div style="display:flex;gap:6px;align-items:center"><span class="fb-badge">Facebook</span><span class="oferta-badge">Dores / Emagrecimento</span><span class="pill pa">Amanha</span></div>
+    </div>
+    <div style="padding:14px;font-size:12px;color:#888;line-height:1.6">
+      Campanha FB sera subida amanha. VSL HONEY V3 com pitch em 33min05s.<br>
+      Expectativa de play rate alto (90%+) igual ao padrao FB. Acompanhar retencao ao pitch nos primeiros 3 dias antes de escalar.
+    </div>
+  </div>
+
+  <!-- FUNIL REVERSO -->
   <div class="sec">funil reverso — meta diaria</div>
   <div class="card"><table>
     <thead><tr><th>Etapa</th><th>Meta/dia</th><th>Real hoje</th><th>Diferenca</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Compras</td><td>14</td><td style="color:#c62828">4</td><td style="color:#c62828">-10</td><td><span class="pill pr">Critico</span></td></tr>
+      <tr><td>Vendas</td><td>14</td><td style="color:#c62828">3</td><td style="color:#c62828">-11</td><td><span class="pill pr">Critico</span></td></tr>
       <tr><td>IC Checkouts</td><td>63</td><td style="color:#c62828">18</td><td style="color:#c62828">-45</td><td><span class="pill pr">Critico</span></td></tr>
       <tr><td>Plays VSL</td><td>902</td><td style="color:#2e7d32">3.328</td><td style="color:#2e7d32">+2.426</td><td><span class="pill pg">OK</span></td></tr>
       <tr><td>LP Views</td><td>2.313</td><td style="color:#2e7d32">4.067</td><td style="color:#2e7d32">+1.754</td><td><span class="pill pg">OK</span></td></tr>
       <tr><td>Cliques</td><td>7.008</td><td style="color:#e65100">4.971</td><td style="color:#e65100">-2.037</td><td><span class="pill pa">Abaixo</span></td></tr>
     </tbody>
   </table></div>
-
-  <div class="sec">retencao vsl — historico 30 dias</div>
-  <div class="g3">
-    <div class="mc"><div class="ml">Total plays</div><div class="mv">92.099</div><div class="ms">Top 3 VSLs ativas</div></div>
-    <div class="mc"><div class="ml">Retencao media pitch</div><div class="mv g">8.27%</div><div class="ms">Meta: 7%+ — Acima ✓</div></div>
-    <div class="mc"><div class="ml">Audiencia pitch total</div><div class="mv">7.465</div><div class="ms">Chegaram ao pitch</div></div>
-  </div>
 </div>
 
 <!-- P5 DIAGNOSTICO -->
@@ -290,45 +419,51 @@ tr:hover td{background:#fafaf8}
   <div class="aw">Diagnostico automatico — 26/03/2026</div>
 
   <div class="dc" style="border-left:4px solid #e53935">
-    <div class="dt"><div class="dstat sr"></div>CRITICO — IC Checkouts 18 vs meta 63</div>
-    <div class="dd">So 18 pessoas chegaram ao checkout de 4.067 LP Views. Trafego OK, conversao de views para checkout esta em 0.44% vs meta 22%. Problema estrutural na VSL ou oferta pos-pitch.</div>
-    <div class="da">Acao: Verificar pagina de checkout. Testar novo angulo pos-pitch. Analisar retencao da VSL por minuto.</div>
-  </div>
-
-  <div class="dc" style="border-left:4px solid #e53935">
-    <div class="dt"><div class="dstat sr"></div>CRITICO — Apenas 4 compras vs meta 14/dia</div>
-    <div class="dd">CPA $257 vs meta $168. Com $1.027 gastos e 4 compras, o dia esta no vermelho. TTK19/CoreStrength ($113 sem conv), TTK58 ($49 sem conv) e TTK61 ($56 sem conv) drenando budget sem retorno.</div>
+    <div class="dt"><div class="dstat sr"></div>CRITICO — Apenas 3 vendas vs meta 14/dia</div>
+    <div class="dd">Com $1.050 gastos e apenas 3 vendas, CPA em $350 vs meta $168. Campanhas TTK19 ($113), TTK58 ($49) e TTK61 ($56) drenando $218 sem nenhuma conversao.</div>
     <div class="da">Acao: Pausar TTK19, TTK58 e TTK61 imediatamente. Concentrar budget no TTK131/D0018 (ROAS 2.58x).</div>
   </div>
 
+  <div class="dc" style="border-left:4px solid #e53935">
+    <div class="dt"><div class="dstat sr"></div>CRITICO — IC Checkouts 18 vs meta 63/dia</div>
+    <div class="dd">De 3.328 plays apenas 18 chegaram ao checkout (0.54%). Volume de trafego esta acima da meta mas a conversao views-para-checkout esta muito baixa. Problema na VSL entre o pitch e o CTA.</div>
+    <div class="da">Acao: Analisar drop off nos minutos 15-25 da VSL. Testar novo angulo pos-pitch.</div>
+  </div>
+
   <div class="dc" style="border-left:4px solid #fb8c00">
-    <div class="dt"><div class="dstat sa"></div>FB com apenas 1 campanha ativa</div>
-    <div class="dd">Emily Lily C3 rodando com CPA de $325 (acima do limite de $240). Laura Moreira com $46 gastos sem converter. O Facebook precisa de novas contas para recuperar o volume de ontem.</div>
-    <div class="da">Acao: Brandon subir novas contas urgente. Monitorar Emily C3 — se CPA nao melhorar, pausar.</div>
+    <div class="dt"><div class="dstat sa"></div>ATENCAO — JointPain TTK60 com ret. 1.59%</div>
+    <div class="dd">TTK60 com apenas 68 plays e retencao ao pitch de 1.59% — muito abaixo da meta de 7%. Audiencia de apenas 1 pessoa chegou ao pitch. Gasto de $113 sem resultado.</div>
+    <div class="da">Acao: Pausar TTK60/CoreStrength. Manter apenas TTK19 (8.89% de retencao) como teste. FB entra amanha para comparacao.</div>
   </div>
 
   <div class="dc" style="border-left:4px solid #43a047">
-    <div class="dt"><div class="dstat sg"></div>POSITIVO — D0018 com ROAS 2.58x no TTK131</div>
-    <div class="dd">TTK131 com D0018 no CP0040 entregou ROAS 2.58x e CPA $93 hoje — o melhor da operacao. Este e o criativo para escalar com prioridade maxima.</div>
-    <div class="da">Acao: Aumentar budget TTK131/D0018/CP0040. Duplicar campanha para escala.</div>
+    <div class="dt"><div class="dstat sg"></div>POSITIVO — D0018/TTK131 com ROAS 2.58x</div>
+    <div class="dd">TTK131 com D0018 no CP0040 entregou CPA de $93 hoje — muito abaixo da meta de $168. Este e o unico criativo lucrativo no TikTok agora.</div>
+    <div class="da">Acao: Aumentar budget TTK131/D0018/CP0040. Duplicar campanha para escala segura.</div>
   </div>
 
   <div class="dc" style="border-left:4px solid #43a047">
     <div class="dt"><div class="dstat sg"></div>POSITIVO — Conv. Checkout 22.22% na meta</div>
-    <div class="dd">A taxa de conversao do checkout esta exatamente na meta (22%). O gargalo nao e o checkout — e levar mais pessoas ate ele via retencao da VSL.</div>
-    <div class="da">Foco: aumentar IC Checkouts melhorando retencao da VSL nos minutos 15-25.</div>
+    <div class="dd">A taxa de conversao do checkout (22.22%) esta exatamente na meta. O gargalo nao e a pagina de checkout — e levar mais pessoas ate ela.</div>
+    <div class="da">Foco: melhorar retencao da VSL nos minutos 15-25 para aumentar volume de IC.</div>
+  </div>
+
+  <div class="dc" style="border-left:4px solid #43a047">
+    <div class="dt"><div class="dstat sg"></div>POSITIVO — JointPain TTK19 com 8.89% de retencao</div>
+    <div class="dd">VSL nova com retencao acima da meta (7%) no TTK19. Volume ainda pequeno para decisao definitiva mas o sinal e positivo. FB entra amanha para validar o angulo em outro canal.</div>
+    <div class="da">Aguardar 3 dias com FB rodando para ter volume suficiente de decisao.</div>
   </div>
 
   <div class="sec">ranking campanhas hoje</div>
   <div class="card"><table>
-    <thead><tr><th>#</th><th>Canal</th><th>Campanha</th><th>Spend</th><th>Receita</th><th>ROAS</th><th>CPA</th><th>Veredicto</th></tr></thead>
+    <thead><tr><th>#</th><th>Canal</th><th>Oferta</th><th>Campanha</th><th>Spend</th><th>Receita</th><th>ROAS</th><th>CPA</th><th>Veredicto</th></tr></thead>
     <tbody>
-      <tr><td style="color:#2e7d32;font-weight:700">1</td><td><span class="tk">TK</span></td><td style="font-size:11px">TTK131 | D0018 | CP0040</td><td>$93</td><td>$240</td><td style="color:#2e7d32">2.58x</td><td style="color:#2e7d32">$93</td><td><span class="pill pg">Escalar</span></td></tr>
-      <tr><td style="color:#1565c0;font-weight:700">2</td><td><span class="tk">TK</span></td><td style="font-size:11px">TTK18 | D024</td><td>$252</td><td>$240</td><td>0.95x</td><td style="color:#e65100">$252</td><td><span class="pill pa">Monitorar</span></td></tr>
-      <tr><td style="color:#1565c0;font-weight:700">3</td><td><span class="fb">FB</span></td><td style="font-size:11px">Emily Lily C3 | SH</td><td>$325</td><td>$240</td><td>0.74x</td><td style="color:#c62828">$325</td><td><span class="pill pa">Monitorar</span></td></tr>
-      <tr><td style="color:#c62828;font-weight:700">4</td><td><span class="tk">TK</span></td><td style="font-size:11px">TTK19 | CoreStrength</td><td>$113</td><td>$0</td><td>0x</td><td>—</td><td><span class="pill pr">Pausar agora</span></td></tr>
-      <tr><td style="color:#c62828;font-weight:700">5</td><td><span class="tk">TK</span></td><td style="font-size:11px">TTK61 | SH | Abacate</td><td>$56</td><td>$0</td><td>0x</td><td>—</td><td><span class="pill pr">Pausar agora</span></td></tr>
-      <tr><td style="color:#c62828;font-weight:700">6</td><td><span class="tk">TK</span></td><td style="font-size:11px">TTK58 | SH | Parasite</td><td>$49</td><td>$0</td><td>0x</td><td>—</td><td><span class="pill pr">Pausar agora</span></td></tr>
+      <tr><td style="color:#2e7d32;font-weight:700">1</td><td><span class="tk">TK</span></td><td><span class="oferta-badge">SugarHarmony</span></td><td style="font-size:11px">TTK131 | D0018 | CP0040</td><td>$93</td><td>$240</td><td style="color:#2e7d32">2.58x</td><td style="color:#2e7d32">$93</td><td><span class="pill pg">Escalar</span></td></tr>
+      <tr><td style="color:#1565c0;font-weight:700">2</td><td><span class="tk">TK</span></td><td><span class="oferta-badge">SugarHarmony</span></td><td style="font-size:11px">TTK18 | D024</td><td>$252</td><td>$240</td><td>0.95x</td><td style="color:#e65100">$252</td><td><span class="pill pa">Monitorar</span></td></tr>
+      <tr><td style="color:#1565c0;font-weight:700">3</td><td><span class="fb">FB</span></td><td><span class="oferta-badge">SugarHarmony</span></td><td style="font-size:11px">Emily Lily C3 | SCK85</td><td>$325</td><td>$240</td><td>0.74x</td><td style="color:#c62828">$325</td><td><span class="pill pa">Monitorar</span></td></tr>
+      <tr><td style="color:#c62828;font-weight:700">4</td><td><span class="tk">TK</span></td><td><span class="oferta-badge">JointPain</span></td><td style="font-size:11px">TTK19 | CoreStrength</td><td>$113</td><td>$0</td><td>0x</td><td>—</td><td><span class="pill pr">Pausar</span></td></tr>
+      <tr><td style="color:#c62828;font-weight:700">5</td><td><span class="tk">TK</span></td><td><span class="oferta-badge">SugarHarmony</span></td><td style="font-size:11px">TTK61 | Abacate</td><td>$56</td><td>$0</td><td>0x</td><td>—</td><td><span class="pill pr">Pausar</span></td></tr>
+      <tr><td style="color:#c62828;font-weight:700">6</td><td><span class="tk">TK</span></td><td><span class="oferta-badge">SugarHarmony</span></td><td style="font-size:11px">TTK58 | Parasite</td><td>$49</td><td>$0</td><td>0x</td><td>—</td><td><span class="pill pr">Pausar</span></td></tr>
     </tbody>
   </table></div>
 </div>
@@ -337,55 +472,57 @@ tr:hover td{background:#fafaf8}
 <div id="p6" class="page">
   <div class="sec">financeiro hoje</div>
   <div class="g4">
-    <div class="mc"><div class="ml">Receita bruta</div><div class="mv">$720</div><div class="ms">4 compras x $180 AOV</div></div>
-    <div class="mc"><div class="ml">Ad Spend</div><div class="mv r">$1.027</div><div class="ms">Acima do retorno</div></div>
-    <div class="mc"><div class="ml">Lucro/Prejuizo</div><div class="mv r">-$307</div><div class="ms">ROI: -29.89%</div></div>
-    <div class="mc"><div class="ml">ROAS</div><div class="mv r">0.70x</div><div class="ms">Meta: 1.43x</div></div>
+    <div class="mc"><div class="ml">Ad Spend</div><div class="mv r">$1.050</div><div class="ms">3 campanhas lucrativas</div></div>
+    <div class="mc"><div class="ml">Receita</div><div class="mv g">$720</div><div class="ms">3 vendas x $240</div></div>
+    <div class="mc"><div class="ml">Lucro/Prejuizo</div><div class="mv r">-$330</div><div class="ms">ROI: -31.43%</div></div>
+    <div class="mc"><div class="ml">ROAS</div><div class="mv r">0.68x</div><div class="ms">Meta: 1.43x</div></div>
   </div>
 
   <div class="sec">resumo mensal — marco 2026</div>
   <div class="card"><table>
-    <thead><tr><th>Metrica</th><th>Meta Mensal</th><th>Realizado</th><th>Status</th></tr></thead>
+    <thead><tr><th>Metrica</th><th>Meta</th><th>Realizado</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Faturamento Comissoes</td><td>$100.000</td><td style="color:#2e7d32">$171.120</td><td><span class="pill pg">171% — batida!</span></td></tr>
-      <tr><td>Ad Spend Total</td><td>$70.000</td><td style="color:#c62828">$167.181</td><td><span class="pill pr">239% do budget</span></td></tr>
-      <tr><td>Lucro Liquido</td><td>$30.000</td><td style="color:#e65100">$3.939</td><td><span class="pill pr">13% — critico</span></td></tr>
-      <tr><td>Margem Real</td><td>30%</td><td style="color:#c62828">2.3%</td><td><span class="pill pr">Margem critica</span></td></tr>
+      <tr><td>Faturamento Comissoes</td><td>$100.000</td><td style="color:#2e7d32">$171.360</td><td><span class="pill pg">171% da meta</span></td></tr>
+      <tr><td>Ad Spend Total</td><td>$70.000</td><td style="color:#c62828">$167.219</td><td><span class="pill pr">239% do budget</span></td></tr>
+      <tr><td>Lucro Liquido</td><td>$30.000</td><td style="color:#e65100">$4.141</td><td><span class="pill pr">14% da meta</span></td></tr>
+      <tr><td>Margem Real</td><td>30%</td><td style="color:#c62828">2.4%</td><td><span class="pill pr">Margem critica</span></td></tr>
       <tr><td>ROAS Medio</td><td>1.43x</td><td style="color:#e65100">1.02x</td><td><span class="pill pa">Abaixo meta</span></td></tr>
       <tr><td>Mes passado ROAS</td><td>—</td><td>1.07x</td><td><span class="pill pgr">Referencia</span></td></tr>
     </tbody>
   </table></div>
 
-  <div class="sec">break-even por produto</div>
+  <div class="sec">break-even por oferta</div>
   <div class="card"><table>
-    <thead><tr><th>Produto</th><th>Comissao</th><th>CPA meta</th><th>CPA hoje</th><th>Status</th></tr></thead>
+    <thead><tr><th>Oferta</th><th>Canal</th><th>Comissao</th><th>CPA meta</th><th>CPA hoje</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>SugarHarmony (geral)</td><td>$240</td><td>$168</td><td style="color:#c62828">$257</td><td><span class="pill pr">Acima meta</span></td></tr>
-      <tr><td>TTK131/D0018 (melhor)</td><td>$240</td><td>$168</td><td style="color:#2e7d32">$93</td><td><span class="pill pg">Excelente</span></td></tr>
-      <tr><td>CoreStrength</td><td>—</td><td>—</td><td>—</td><td><span class="pill pr">Sem conv — pausar</span></td></tr>
+      <tr><td>SugarHarmony</td><td><span class="tk">TK</span></td><td>$240</td><td>$168</td><td style="color:#c62828">$350</td><td><span class="pill pr">Acima meta</span></td></tr>
+      <tr><td>TTK131/D0018 (melhor)</td><td><span class="tk">TK</span></td><td>$240</td><td>$168</td><td style="color:#2e7d32">$93</td><td><span class="pill pg">Excelente</span></td></tr>
+      <tr><td>SugarHarmony</td><td><span class="fb">FB</span></td><td>$240</td><td>$168</td><td style="color:#c62828">$325</td><td><span class="pill pr">CPA alto</span></td></tr>
+      <tr><td>JointPain / CoreStrength</td><td><span class="tk">TK</span></td><td>—</td><td>—</td><td>—</td><td><span class="pill pr">Sem conv.</span></td></tr>
+      <tr><td>JointPain / CoreStrength</td><td><span class="fb">FB</span></td><td>—</td><td>—</td><td>—</td><td><span class="pill pa">Amanha</span></td></tr>
     </tbody>
   </table></div>
 
   <div class="sec">projecao do mes</div>
-  <div class="ng2">
+  <div class="g2">
     <div class="mc">
-      <div class="ml">Receita acumulada</div><div class="mv g">$171.120</div><div class="ms">26/30 dias — meta $100k</div>
+      <div class="ml">Receita acumulada</div><div class="mv g">$171.360</div><div class="ms">26/30 dias — meta $100k</div>
       <div style="margin-top:10px"><div class="pbar"><div class="pfill" style="width:100%"></div></div>
       <div style="font-size:11px;color:#2e7d32;font-weight:600;margin-top:4px">Meta de receita BATIDA — 171%!</div></div>
     </div>
     <div class="mc">
-      <div class="ml">Lucro acumulado</div><div class="mv r">$3.939</div><div class="ms">Meta: $30.000/mes (13%)</div>
-      <div style="margin-top:10px"><div class="pbar"><div class="pfill" style="width:13%;background:#e53935"></div></div>
-      <div style="font-size:11px;color:#c62828;font-weight:600;margin-top:4px">Lucro critico — ad spend consumindo a margem</div></div>
+      <div class="ml">Lucro acumulado</div><div class="mv r">$4.141</div><div class="ms">Meta: $30.000/mes</div>
+      <div style="margin-top:10px"><div class="pbar"><div class="pfill" style="width:14%;background:#e53935"></div></div>
+      <div style="font-size:11px;color:#c62828;font-weight:600;margin-top:4px">14% da meta — ad spend alto demais vs receita</div></div>
     </div>
   </div>
 </div>
 
-<!-- P7 METAS E VIABILIDADE -->
+<!-- P7 METAS -->
 <div id="p7" class="page">
-  <div class="ai">Planilha de viabilidade do Iuri integrada. Dados atualizados em 26/03/2026.</div>
+  <div class="ai">Planilha de viabilidade do Iuri integrada. 26/03/2026.</div>
   <div class="sec">premissas e metas</div>
-  <div class="ng2">
+  <div class="g2">
     <div class="card">
       <div class="chdr"><div class="ct">Metas financeiras</div></div>
       <div style="padding:14px">
@@ -404,44 +541,45 @@ tr:hover td{background:#fafaf8}
     <div class="card">
       <div class="chdr"><div class="ct">Parametros de mercado</div></div>
       <div style="padding:14px">
-        <div class="meta-row"><span class="meta-label">Conv. checkout para venda</span><span class="meta-val g">22% (hoje 22.22% ✓)</span></div>
-        <div class="meta-row"><span class="meta-label">Retencao VSL ate pitch</span><span class="meta-val g">7% (hoje 8.27% ✓)</span></div>
-        <div class="meta-row"><span class="meta-label">Connect Rate / Play Rate</span><span class="meta-val g">81.81% ✓</span></div>
-        <div class="meta-row"><span class="meta-label">Connect rate TK referencia</span><span class="meta-val">33%</span></div>
-        <div class="meta-row"><span class="meta-label">Connect rate FB referencia</span><span class="meta-val">90%</span></div>
-        <div class="meta-row"><span class="meta-label">CTR medio</span><span class="meta-val">20%</span></div>
-        <div class="meta-row"><span class="meta-label">CPM referencia</span><span class="meta-val">$31.82</span></div>
+        <div class="meta-row"><span class="meta-label">Conv. checkout → venda</span><span class="meta-val g">22% (hoje 22.22% ✓)</span></div>
+        <div class="meta-row"><span class="meta-label">Ret. VSL pitch (SH)</span><span class="meta-val g">Meta 7% (TK 9.39% ✓)</span></div>
+        <div class="meta-row"><span class="meta-label">Ret. VSL pitch (FB)</span><span class="meta-val g">12.36% ✓</span></div>
+        <div class="meta-row"><span class="meta-label">Ret. VSL JointPain (TK)</span><span class="meta-val a">8.89% (TTK19) ✓</span></div>
+        <div class="meta-row"><span class="meta-label">Play Rate TK</span><span class="meta-val">28-35%</span></div>
+        <div class="meta-row"><span class="meta-label">Play Rate FB</span><span class="meta-val g">91.59% ✓</span></div>
         <div class="meta-row"><span class="meta-label">IC checkouts meta/dia</span><span class="meta-val r">63 (hoje: 18)</span></div>
         <div class="meta-row"><span class="meta-label">Plays VSL meta/dia</span><span class="meta-val g">902 (hoje: 3.328 ✓)</span></div>
-        <div class="meta-row"><span class="meta-label">Views VSL meta/dia</span><span class="meta-val g">2.313 (hoje: 4.067 ✓)</span></div>
+        <div class="meta-row"><span class="meta-label">LP Views meta/dia</span><span class="meta-val g">2.313 (hoje: 4.067 ✓)</span></div>
+        <div class="meta-row"><span class="meta-label">CPC meta</span><span class="meta-val">$0.33</span></div>
       </div>
     </div>
   </div>
 
-  <div class="sec">controle diario de viabilidade — 26/03/2026</div>
+  <div class="sec">controle diario — 26/03/2026</div>
   <div class="card"><table>
     <thead><tr><th>Metrica</th><th>Meta/dia</th><th>Real hoje</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Compras</td><td>14</td><td style="color:#c62828">4</td><td><span class="pill pr">Critico</span></td></tr>
+      <tr><td>Vendas</td><td>14</td><td style="color:#c62828">3</td><td><span class="pill pr">Critico</span></td></tr>
       <tr><td>IC Checkouts</td><td>63</td><td style="color:#c62828">18</td><td><span class="pill pr">Critico</span></td></tr>
-      <tr><td>CPA</td><td>$168</td><td style="color:#c62828">$257</td><td><span class="pill pr">Acima do limite</span></td></tr>
-      <tr><td>ROAS</td><td>1.43x</td><td style="color:#c62828">0.70x</td><td><span class="pill pr">Abaixo</span></td></tr>
-      <tr><td>Ad Spend</td><td>$2.333</td><td style="color:#2e7d32">$1.027</td><td><span class="pill pg">Abaixo (bom)</span></td></tr>
-      <tr><td>Connect Rate VSL</td><td>33-90%</td><td style="color:#2e7d32">81.81%</td><td><span class="pill pg">OK</span></td></tr>
+      <tr><td>CPA</td><td>$168</td><td style="color:#c62828">$350</td><td><span class="pill pr">Acima limite</span></td></tr>
+      <tr><td>ROAS</td><td>1.43x</td><td style="color:#c62828">0.68x</td><td><span class="pill pr">Abaixo</span></td></tr>
+      <tr><td>Ad Spend</td><td>$2.333</td><td style="color:#2e7d32">$1.050</td><td><span class="pill pg">Abaixo (bom)</span></td></tr>
       <tr><td>LP Views</td><td>2.313</td><td style="color:#2e7d32">4.067</td><td><span class="pill pg">OK</span></td></tr>
       <tr><td>Conv. Checkout</td><td>22%</td><td style="color:#2e7d32">22.22%</td><td><span class="pill pg">Na meta</span></td></tr>
-      <tr><td>Retencao VSL pitch</td><td>7%</td><td style="color:#2e7d32">8.27%</td><td><span class="pill pg">Acima meta</span></td></tr>
+      <tr><td>Ret. VSL SH (TK)</td><td>7%</td><td style="color:#2e7d32">9.39%</td><td><span class="pill pg">Acima meta</span></td></tr>
+      <tr><td>Ret. VSL SH (FB)</td><td>7%</td><td style="color:#2e7d32">12.36%</td><td><span class="pill pg">Acima meta</span></td></tr>
+      <tr><td>Ret. VSL JointPain (TK)</td><td>7%</td><td style="color:#2e7d32">8.89%</td><td><span class="pill pg">Acima meta</span></td></tr>
     </tbody>
   </table></div>
 
-  <div class="sec">resumo mensal consolidado — marco 2026</div>
+  <div class="sec">resumo mensal consolidado</div>
   <div class="card"><table>
-    <thead><tr><th>Metrica</th><th>Meta Mensal</th><th>Realizado</th><th>Status</th></tr></thead>
+    <thead><tr><th>Metrica</th><th>Meta</th><th>Realizado</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Faturamento Comissoes</td><td>$100.000</td><td style="color:#2e7d32">$171.120</td><td><span class="pill pg">171% — batida!</span></td></tr>
-      <tr><td>Gasto Total</td><td>$70.000</td><td style="color:#c62828">$167.181</td><td><span class="pill pr">239% — critico</span></td></tr>
-      <tr><td>Lucro Liquido</td><td>$30.000</td><td style="color:#c62828">$3.939</td><td><span class="pill pr">13% — critico</span></td></tr>
-      <tr><td>Margem Real</td><td>30%</td><td style="color:#c62828">2.3%</td><td><span class="pill pr">Margem critica</span></td></tr>
+      <tr><td>Faturamento</td><td>$100.000</td><td style="color:#2e7d32">$171.360</td><td><span class="pill pg">171% batida!</span></td></tr>
+      <tr><td>Gasto Total</td><td>$70.000</td><td style="color:#c62828">$167.219</td><td><span class="pill pr">239% critico</span></td></tr>
+      <tr><td>Lucro Liquido</td><td>$30.000</td><td style="color:#c62828">$4.141</td><td><span class="pill pr">14% critico</span></td></tr>
+      <tr><td>Margem Real</td><td>30%</td><td style="color:#c62828">2.4%</td><td><span class="pill pr">Margem critica</span></td></tr>
       <tr><td>ROAS Medio</td><td>1.43x</td><td style="color:#e65100">1.02x</td><td><span class="pill pa">Abaixo meta</span></td></tr>
     </tbody>
   </table></div>
@@ -449,7 +587,7 @@ tr:hover td{background:#fafaf8}
 
 </div>
 <div class="footer">
-  <span>isdigital ops · 26/03/2026 · RedTrack atualizado</span>
+  <span>isdigital ops · 26/03/2026 · RedTrack + Vturb</span>
   <div class="live"><div class="dot"></div>ao vivo</div>
 </div>
 <script>
